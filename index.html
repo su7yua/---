@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика позиционирования и сеток</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Фиксированное меню (пункт 3) -->
+    <nav class="fixed-menu">
+        <div class="menu-container">
+            <a href="#" class="logo">🛍️ ShopName</a>
+            <ul class="menu-links">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контент, центрированный с помощью Flexbox (пункт 7) -->
+    <main class="main-content">
+        <div class="content-wrapper">
+
+            <!-- Заголовок страницы с position: sticky (пункт 4) -->
+            <header class="page-header">
+                <h1 class="sticky-header">Наши товары</h1>
+                <p>Лучшие предложения для вас. Прокрутите вниз, чтобы увидеть эффект липкого заголовка.</p>
+            </header>
+
+            <!-- Секция с карточками товаров, использующая CSS Grid (пункт 5) -->
+            <section class="products-grid">
+                
+                <!-- Карточка товара 1 (блок div) -->
+                <div class="product-card">
+                    <!-- Блок с position: relative и absolute для ярлыка (пункт 2) -->
+                    <div class="card-badge-container">
+                        <img src="https://placehold.co/300x200/2a3b4c/white?text=Товар+1" alt="Товар 1">
+                        <span class="badge">Хит продаж</span>
+                    </div>
+                    <h3>Товар 1</h3>
+                    <p class="price">1 990 ₽</p>
+                    <button>В корзину</button>
+                </div>
+
+                <!-- Карточка товара 2 -->
+                <div class="product-card">
+                    <div class="card-badge-container">
+                        <img src="https://placehold.co/300x200/2a3b4c/white?text=Товар+2" alt="Товар 2">
+                        <!-- Здесь ярлыка нет, контейнер оставлен для единообразия -->
+                    </div>
+                    <h3>Товар 2</h3>
+                    <p class="price">2 490 ₽</p>
+                    <button>В корзину</button>
+                </div>
+
+                <!-- Карточка товара 3 -->
+                <div class="product-card">
+                    <div class="card-badge-container">
+                        <img src="https://placehold.co/300x200/2a3b4c/white?text=Товар+3" alt="Товар 3">
+                        <span class="badge">Новинка</span>
+                    </div>
+                    <h3>Товар 3</h3>
+                    <p class="price">3 290 ₽</p>
+                    <button>В корзину</button>
+                </div>
+
+                <!-- Карточка товара 4 -->
+                <div class="product-card">
+                    <div class="card-badge-container">
+                        <img src="https://placehold.co/300x200/2a3b4c/white?text=Товар+4" alt="Товар 4">
+                    </div>
+                    <h3>Товар 4</h3>
+                    <p class="price">1 590 ₽</p>
+                    <button>В корзину</button>
+                </div>
+
+                <!-- Карточка товара 5 -->
+                <div class="product-card">
+                    <div class="card-badge-container">
+                        <img src="https://placehold.co/300x200/2a3b4c/white?text=Товар+5" alt="Товар 5">
+                    </div>
+                    <h3>Товар 5</h3>
+                    <p class="price">4 990 ₽</p>
+                    <button>В корзину</button>
+                </div>
+
+                <!-- Карточка товара 6 -->
+                <div class="product-card">
+                    <div class="card-badge-container">
+                        <img src="https://placehold.co/300x200/2a3b4c/white?text=Товар+6" alt="Товар 6">
+                        <span class="badge">Акция</span>
+                    </div>
+                    <h3>Товар 6</h3>
+                    <p class="price">990 ₽</p>
+                    <button>В корзину</button>
+                </div>
+            </section>
+
+            <!-- Дополнительный контент для демонстрации скролла и sticky -->
+            <div style="height: 300px; margin-top: 40px; padding: 20px; background-color: #e9eef2; border-radius: 12px;">
+                <h2>Еще немного контента</h2>
+                <p>Прокрутите страницу вверх и вниз. Обратите внимание, что меню всегда остается вверху (fixed), а заголовок "Наши товары" прилипает к нижней границе меню, когда вы до него доскроллите (sticky).</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Простой футер для завершения страницы -->
+    <footer>
+        <p>© 2023 ShopName. Все права защищены. Практическое задание по CSS.</p>
+    </footer>
+
+</body>
+</html>

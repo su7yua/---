@@ -1,0 +1,203 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Подключаем шрифт (пункт 6) */
+    background-color: #f4f7fa; /* Основной цвет фона страницы (пункт 6) */
+    color: #1e2b37;
+    line-height: 1.5;
+    padding-top: 70px; /* Отступ сверху, чтобы контент не прятался под фиксированное меню */
+}
+
+/* --- Фиксированное меню (пункт 3) --- */
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e2b37; /* Темный фон меню */
+    color: white;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000; /* Чтобы меню было поверх всего */
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем содержимое меню */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.menu-links a:hover {
+    color: #ffffff;
+}
+
+/* --- Центрирование основного контента с Flexbox (пункт 7) --- */
+.main-content {
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* --- Заголовок страницы и sticky элемент (пункт 4) --- */
+.page-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 70px; /* Прилипает сразу под фиксированное меню (высота меню 70px) */
+    background-color: #f4f7fa; /* Тот же цвет, что и фон, чтобы не было видно наложения */
+    padding: 1rem 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0f1a24;
+    border-bottom: 2px solid #cbd5e0;
+    z-index: 500;
+    /* Небольшая тень для отделения от контента */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    /* Гарантируем, что фон перекрывает контент под ним */
+    margin-top: 0;
+    width: 100%;
+}
+
+/* --- Сетка товаров на CSS Grid (пункт 5) --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Адаптивная сетка */
+    gap: 1.8rem;
+    margin: 2rem 0;
+}
+
+/* --- Стили карточки товара (пункт 6) --- */
+.product-card {
+    background-color: #ffffff; /* Цвет карточек (пункт 6) */
+    border-radius: 16px;
+    padding: 1.2rem 1.2rem 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+/* Контейнер для изображения и бейджа (relative) (пункт 2) */
+.card-badge-container {
+    position: relative; /* Точка отсчета для абсолютного позиционирования бейджа */
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden; /* Чтобы изображение не выходило за рамки */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: #2a3b4c; /* На случай, если картинка не загрузится */
+}
+
+/* Бейдж (absolute) (пункт 2) */
+.badge {
+    position: absolute; /* Позиционируется относительно .card-badge-container */
+    top: 12px;
+    left: 12px;
+    background-color: #e53e3e; /* Красный для "хита" */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+/* Разные цвета для примера (необязательно) */
+.product-card:nth-child(3) .badge {
+    background-color: #3182ce; /* Синий для "Новинки" */
+}
+.product-card:nth-child(6) .badge {
+    background-color: #38a169; /* Зеленый для "Акции" */
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #1e2b37;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    margin-top: auto; /* Прижимает цену и кнопку к низу */
+}
+
+.product-card button {
+    background-color: #1e2b37;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+    border: 1px solid #1e2b37;
+}
+
+.product-card button:hover {
+    background-color: #2c3e50;
+}
+
+/* --- Стили футера --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    color: #64748b;
+    border-top: 1px solid #cbd5e0;
+    background-color: #e9eef2;
+}
